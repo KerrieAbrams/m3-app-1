@@ -10,6 +10,10 @@ components:
     name: label_1
     properties: {align: right, font_size: 18, text: 'Loan Amount:'}
     type: Label
+  - layout_properties: {grid_position: 'SXXTDH,QBDMEL UHMPIX,JRUFMH'}
+    name: label_5
+    properties: {align: right, font_size: 16, text: 'Loan Interest Rate:'}
+    type: Label
   - layout_properties: {grid_position: 'SXXTDH,QBDMEL WTDSOA,EIEFDP'}
     name: label_3
     properties: {align: right, font_size: 18, text: 'Any defaults on file?'}
@@ -17,7 +21,11 @@ components:
   - data_bindings: []
     layout_properties: {grid_position: 'SXXTDH,BGVBND UFYOHZ,EVADXU'}
     name: loan_amount
-    properties: {font_size: 16, placeholder: ''}
+    properties: {font_size: 16, placeholder: integer only}
+    type: TextBox
+  - layout_properties: {grid_position: 'SXXTDH,BGVBND UJZCCJ,WNZBYP'}
+    name: int_rate
+    properties: {placeholder: '00.00'}
     type: TextBox
   - data_bindings: []
     layout_properties: {grid_position: 'SXXTDH,BGVBND MMEXMB,SJNEAP'}
@@ -37,7 +45,7 @@ components:
     type: Label
   - layout_properties: {grid_position: 'SXXTDH,SRZJQM ZMEFTT,VTEJYL'}
     name: income
-    properties: {}
+    properties: {placeholder: integer only}
     type: TextBox
   - layout_properties: {grid_position: 'SXXTDH,SRZJQM XVCIXM,XBTRRU'}
     name: homeownership
@@ -53,7 +61,7 @@ components:
     type: Button
   - layout_properties: {grid_position: 'NNOSVQ,CRCNIT'}
     name: loan_status
-    properties: {align: center}
+    properties: {align: center, visible: false}
     type: Label
   layout_properties: {grid_position: ''}
   name: outlined_card_1

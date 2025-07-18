@@ -8,16 +8,17 @@ class Form2(Form2Template):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
     self.default.items = [["Yes",0],["No",1]]
-    self.homeownership.items = [["Rent",2],["Own",1]["Mortgage",0]]
+    self.homeownership.items = [["Rent",2],["Own",1],["Mortgage",0]]
     # Any code you write here will run before the form opens.
 
   def submit_click(self, **event_args):
     """This method is called when the button is clicked"""
     loan_status = anvil.server.call('classify_loan',
                                    int(self.loan_amount.text),
+                                   float(self.int_rate.text),
                                    int(self.income.text),
-                                   int(self.default.text),
-                                   int(self.homeownership.text)
+                                   int(self.default.selected_value),
+                                   int(self.homeownership.selected_value)
                                    )
     if loan_status:
       self.loan_status.visible = True
